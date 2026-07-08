@@ -214,10 +214,12 @@ fun SettingsContent(
 
                     // 2. Madhab
                     Text("Asr Madhab School", fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
-                    Column(modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Column(modifier = Modifier.fillMaxWidth()) {
                         Madhab.values().forEach { madhab ->
                             Row(
                                 modifier = Modifier
+                                    .fillMaxWidth()
                                     .clickable { viewModel.updateAsrMadhab(madhab) }
                                     .padding(vertical = 8.dp),
                                 verticalAlignment = Alignment.CenterVertically
@@ -226,10 +228,10 @@ fun SettingsContent(
                                     selected = settings.asrMadhab == madhab,
                                     onClick = { viewModel.updateAsrMadhab(madhab) }
                                 )
-                                Spacer(modifier = Modifier.width(4.dp))
+                                Spacer(modifier = Modifier.width(8.dp))
                                 Text(
                                     text = if (madhab == Madhab.STANDARD) "Standard (Shafi'i, Maliki, Hanbali)" else "Hanafi",
-                                    fontSize = 12.sp
+                                    fontSize = 13.sp
                                 )
                             }
                         }
