@@ -214,7 +214,7 @@ fun SettingsContent(
 
                     // 2. Madhab
                     Text("Asr Madhab School", fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
-                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Column(modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         Madhab.values().forEach { madhab ->
                             Row(
                                 modifier = Modifier
